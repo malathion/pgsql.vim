@@ -19,6 +19,8 @@ endif
 " Always ignore case
 syn case ignore
 
+
+
 " General keywords which don't fall into other categories {{{1
 syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
@@ -50,6 +52,16 @@ syn keyword pgsqlKeyword	 where with
 
 " }}}
 " Begin
+
+" Reserved words {{{1
+" Reserved words not found in other categories
+syn keyword pgsqlReservedword	all analyse array asc asymmetric authorization both collate collation
+syn keyword pgsqlReservedword	concurrently cross freeze ilike intersect isnull lateral leading localtime
+syn keyword pgsqlReservedword	localtimestamp natural notnull offset only over overlaps placing returning
+syn keyword pgsqlReservedword	right session user similar some symmetric trailing union user variadic window
+syn match pgsqlReservedword		"current catalog" "current date" "current role" "current schema" "current time" 
+syn match pgsqlReservedword		"current timestamp" "current user"
+" }}}
 
 " Special values {{{1
 syn keyword pgsqlSpecial	 false null true
@@ -2035,6 +2047,7 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   endif
 
   HiLink pgsqlKeyword		 Statement
+  HiLink pgsqlReservedword	 Statement
   HiLink pgsqlSpecial		 Special
   HiLink pgsqlString		 String
   HiLink pgsqlNumber		 Number
