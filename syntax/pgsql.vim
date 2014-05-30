@@ -93,33 +93,88 @@ syn sync ccomment pgsqlComment
 " }}}
 
 " Column types {{{1
-syn keyword pgsqlType        anyarray anyelement abstime anyenum
-syn keyword pgsqlType        anynonarray any aclitem
-syn keyword pgsqlType        bytea bigserial bit boolean bigint box
-syn keyword pgsqlType        cidr cstring char character cid circle
-syn keyword pgsqlType        decimal double date
-syn keyword pgsqlType        enum
-syn keyword pgsqlType        gtsvector
-syn keyword pgsqlType        hstore
-syn keyword pgsqlType        inet interval
-syn keyword pgsqlType        internal int2vector int integer
-syn keyword pgsqlType        line lseg language_handler
-syn keyword pgsqlType        macaddr money
-syn keyword pgsqlType        numeric name
-syn keyword pgsqlType        opaque oidvector oid
-syn keyword pgsqlType        polygon point path period precision
-syn keyword pgsqlType        regclass real regtype refcursor regoperator
-syn keyword pgsqlType        reltime record regproc regdictionary regoper
-syn keyword pgsqlType        regprocedure regconfig
-syn keyword pgsqlType        smgr smallint serial smallserial
-syn keyword pgsqlType        time tsquery tinterval
-syn keyword pgsqlType        trigger tid timestamp timestamptz text
-syn keyword pgsqlType        tsvector txid_snapshot
-syn keyword pgsqlType        unknown uuid
-syn keyword pgsqlType        void varchar varying
-syn keyword pgsqlType        with without
-syn keyword pgsqlType        xml xid
-syn keyword pgsqlType        zone
+syn keyword pgsqlType        abstime abstime _abstime abstime[] _abstime aclitem aclitem _aclitem aclitem[]
+syn keyword pgsqlType        aclitem bigint bigint[] bigserial bit bit _bit bit[] _bit 'bit varying' 'bit
+syn keyword pgsqlType        arying[]' bool bool _bool _bool boolean boolean[] box box _box box[] _box
+syn keyword pgsqlType        pchar bpchar _bpchar _bpchar bytea bytea _bytea bytea[] _bytea char char _char
+syn keyword pgsqlType        char" "char"[] _char character character[] 'character varying' 'character
+syn keyword pgsqlType        arying[]' cid cid _cid cid[] _cid cidr cidr _cidr cidr[] _cidr circle circle
+syn keyword pgsqlType        circle circle[] _circle date date _date date[] _date daterange daterange
+syn keyword pgsqlType        daterange daterange[] _daterange decimal 'double precision' 'double
+syn keyword pgsqlType        recision[]' float4 float4 _float4 _float4 float8 float8 _float8 _float8
+syn keyword pgsqlType        tsvector gtsvector _gtsvector gtsvector[] _gtsvector inet inet _inet inet[]
+syn keyword pgsqlType        inet int2 int2 _int2 _int2 int2vector int2vector _int2vector int2vector[]
+syn keyword pgsqlType        int2vector int4 int4 _int4 _int4 int4range int4range _int4range int4range[]
+syn keyword pgsqlType        int4range int8 int8 _int8 _int8 int8range int8range _int8range int8range[]
+syn keyword pgsqlType        int8range integer integer[] interval interval _interval interval[] _interval
+syn keyword pgsqlType        son json _json json[] _json line line _line line[] _line lseg lseg _lseg
+syn keyword pgsqlType        seg[] _lseg macaddr macaddr _macaddr macaddr[] _macaddr money money _money
+syn keyword pgsqlType        oney[] _money name name _name name[] _name numeric numeric _numeric numeric[]
+syn keyword pgsqlType        numeric numrange numrange _numrange numrange[] _numrange oid oid _oid oid[]
+syn keyword pgsqlType        oid oidvector oidvector _oidvector oidvector[] _oidvector path path _path
+syn keyword pgsqlType        ath[] _path pg_aggregate pg_aggregate pg_am pg_am pg_amop pg_amop pg_amproc
+syn keyword pgsqlType        g_amproc pg_attrdef pg_attrdef pg_attribute pg_attribute pg_authid pg_authid
+syn keyword pgsqlType        g_auth_members pg_auth_members pg_available_extensions pg_available_extensions
+syn keyword pgsqlType        g_available_extension_versions pg_available_extension_versions pg_cast pg_cast
+syn keyword pgsqlType        g_class pg_class pg_collation pg_collation pg_constraint pg_constraint
+syn keyword pgsqlType        g_conversion pg_conversion pg_cursors pg_cursors pg_database pg_database
+syn keyword pgsqlType        g_db_role_setting pg_db_role_setting pg_default_acl pg_default_acl pg_depend
+syn keyword pgsqlType        g_depend pg_description pg_description pg_enum pg_enum pg_event_trigger
+syn keyword pgsqlType        g_event_trigger pg_extension pg_extension pg_foreign_data_wrapper
+syn keyword pgsqlType        g_foreign_data_wrapper pg_foreign_server pg_foreign_server pg_foreign_table
+syn keyword pgsqlType        g_foreign_table pg_group pg_group pg_index pg_index pg_indexes pg_indexes
+syn keyword pgsqlType        g_inherits pg_inherits pg_language pg_language pg_largeobject pg_largeobject
+syn keyword pgsqlType        g_largeobject_metadata pg_largeobject_metadata pg_locks pg_locks pg_matviews
+syn keyword pgsqlType        g_matviews pg_namespace pg_namespace pg_node_tree pg_node_tree pg_opclass
+syn keyword pgsqlType        g_opclass pg_operator pg_operator pg_opfamily pg_opfamily pg_pltemplate
+syn keyword pgsqlType        g_pltemplate pg_prepared_statements pg_prepared_statements pg_prepared_xacts
+syn keyword pgsqlType        g_prepared_xacts pg_proc pg_proc pg_range pg_range pg_rewrite pg_rewrite
+syn keyword pgsqlType        g_roles pg_roles pg_rules pg_rules pg_seclabel pg_seclabel pg_seclabels
+syn keyword pgsqlType        g_seclabels pg_settings pg_settings pg_shadow pg_shadow pg_shdepend
+syn keyword pgsqlType        g_shdepend pg_shdescription pg_shdescription pg_shseclabel pg_shseclabel
+syn keyword pgsqlType        g_stat_activity pg_stat_activity pg_stat_all_indexes pg_stat_all_indexes
+syn keyword pgsqlType        g_stat_all_tables pg_stat_all_tables pg_stat_bgwriter pg_stat_bgwriter
+syn keyword pgsqlType        g_stat_database pg_stat_database pg_stat_database_conflicts
+syn keyword pgsqlType        g_stat_database_conflicts pg_statio_all_indexes pg_statio_all_indexes
+syn keyword pgsqlType        g_statio_all_sequences pg_statio_all_sequences pg_statio_all_tables
+syn keyword pgsqlType        g_statio_all_tables pg_statio_sys_indexes pg_statio_sys_indexes
+syn keyword pgsqlType        g_statio_sys_sequences pg_statio_sys_sequences pg_statio_sys_tables
+syn keyword pgsqlType        g_statio_sys_tables pg_statio_user_indexes pg_statio_user_indexes
+syn keyword pgsqlType        g_statio_user_sequences pg_statio_user_sequences pg_statio_user_tables
+syn keyword pgsqlType        g_statio_user_tables pg_stat_replication pg_stat_replication
+syn keyword pgsqlType        g_stat_sys_indexes pg_stat_sys_indexes pg_stat_sys_tables pg_stat_sys_tables
+syn keyword pgsqlType        g_stat_user_functions pg_stat_user_functions pg_stat_user_indexes
+syn keyword pgsqlType        g_stat_user_indexes pg_stat_user_tables pg_stat_user_tables
+syn keyword pgsqlType        g_stat_xact_all_tables pg_stat_xact_all_tables pg_stat_xact_sys_tables
+syn keyword pgsqlType        g_stat_xact_sys_tables pg_stat_xact_user_functions pg_stat_xact_user_functions
+syn keyword pgsqlType        g_stat_xact_user_tables pg_stat_xact_user_tables pg_tables pg_tables
+syn keyword pgsqlType        g_tablespace pg_tablespace pg_timezone_abbrevs pg_timezone_abbrevs
+syn keyword pgsqlType        g_timezone_names pg_timezone_names pg_trigger pg_trigger pg_ts_config
+syn keyword pgsqlType        g_ts_config pg_ts_config_map pg_ts_config_map pg_ts_dict pg_ts_dict
+syn keyword pgsqlType        g_ts_parser pg_ts_parser pg_ts_template pg_ts_template pg_type pg_type pg_user
+syn keyword pgsqlType        g_user pg_user_mapping pg_user_mapping pg_user_mappings pg_user_mappings
+syn keyword pgsqlType        g_views pg_views point point _point point[] _point polygon polygon _polygon
+syn keyword pgsqlType        olygon[] _polygon real real[] refcursor refcursor _refcursor refcursor[]
+syn keyword pgsqlType        refcursor regclass regclass _regclass regclass[] _regclass regconfig regconfig
+syn keyword pgsqlType        regconfig regconfig[] _regconfig regdictionary regdictionary _regdictionary
+syn keyword pgsqlType        egdictionary[] _regdictionary regoper regoper _regoper regoper[] _regoper
+syn keyword pgsqlType        egoperator regoperator _regoperator regoperator[] _regoperator regproc regproc
+syn keyword pgsqlType        regproc regproc[] _regproc regprocedure regprocedure _regprocedure
+syn keyword pgsqlType        egprocedure[] _regprocedure regtype regtype _regtype regtype[] _regtype
+syn keyword pgsqlType        eltime reltime _reltime reltime[] _reltime serial smallint smallint[]
+syn keyword pgsqlType        mallserial smgr smgr text text _text text[] _text tid tid _tid tid[] _tid time
+syn keyword pgsqlType        ime _time _time timestamp timestamp _timestamp _timestamp timestamptz
+syn keyword pgsqlType        imestamptz _timestamptz _timestamptz 'timestamp without time zone' 'timestamp
+syn keyword pgsqlType        ithout time zone[]' 'timestamp with time zone' 'timestamp with time zone[]'
+syn keyword pgsqlType        imetz timetz _timetz _timetz 'time without time zone' 'time without time
+syn keyword pgsqlType        one[]' 'time with time zone' 'time with time zone[]' tinterval tinterval
+syn keyword pgsqlType        tinterval tinterval[] _tinterval tsquery tsquery _tsquery tsquery[] _tsquery
+syn keyword pgsqlType        srange tsrange _tsrange tsrange[] _tsrange tstzrange tstzrange _tstzrange
+syn keyword pgsqlType        stzrange[] _tstzrange tsvector tsvector _tsvector tsvector[] _tsvector
+syn keyword pgsqlType        txid_snapshot txid_snapshot txid_snapshot[] _txid_snapshot txid_snapshot
+syn keyword pgsqlType        nknown unknown uuid uuid _uuid uuid[] _uuid varbit varbit _varbit _varbit
+syn keyword pgsqlType        archar varchar _varchar _varchar xid xid _xid xid[] _xid xml xml _xml xml[]
+syn keyword pgsqlType        xml
 
 syn region pgsqlType		 start="float\W" end="."me=s-1
 syn region pgsqlType		 start="float$" end="."me=s-1
