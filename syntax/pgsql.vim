@@ -182,40 +182,14 @@ syn keyword pgsqlType        nknown unknown uuid uuid _uuid uuid[] _uuid varbit 
 syn keyword pgsqlType        archar varchar _varchar _varchar xid xid _xid xid[] _xid xml xml _xml xml[]
 syn keyword pgsqlType        xml
 
-syn region pgsqlType		 start="float\W" end="."me=s-1
-syn region pgsqlType		 start="float$" end="."me=s-1
-syn region pgsqlType		 start="float(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="double\W" end="."me=s-1
-syn region pgsqlType		 start="double$" end="."me=s-1
-syn region pgsqlType		 start="double(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="double precision\W" end="."me=s-1
-syn region pgsqlType		 start="double precision$" end="."me=s-1
-syn region pgsqlType		 start="double precision(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="real\W" end="."me=s-1
-syn region pgsqlType		 start="real$" end="."me=s-1
-syn region pgsqlType		 start="real(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="numeric(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="decimal(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="\Wtimestamp\W" end="."me=s-1
-syn region pgsqlType		 start="\Wtimestamp$" end="."me=s-1
-syn region pgsqlType		 start="\Wtimestamp(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^timestamp\W" end="."me=s-1
-syn region pgsqlType		 start="^timestamp$" end="."me=s-1
-syn region pgsqlType		 start="^timestamp(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="\Wyear(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^year(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^char(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^varchar(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="\Wset(" end=")" contains=pgsqlString,pgsqlVariable
-syn region pgsqlType		 start="^set(" end=")" contains=pgsqlString,pgsqlVariable
 " }}}
 
 " Logical, string and  numeric operators {{{1
 " TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
-syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
-syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
-syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
-syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
+" syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
+" syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
+" syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
+" syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
 " }}}
 
 " Control flow functions {{{1
