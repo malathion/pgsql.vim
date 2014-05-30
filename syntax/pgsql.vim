@@ -49,22 +49,28 @@ syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp tempo
 syn keyword pgsqlKeyword	 update unique unlisten using
 syn keyword pgsqlKeyword	 verbose view values varying vacuum
 syn keyword pgsqlKeyword	 where with
-
 " }}}
-" Begin
 
 " Reserved words {{{1
-" Reserved words not found in other categories
-syn keyword pgsqlReservedword	all analyse array asc asymmetric authorization both collate collation
-syn keyword pgsqlReservedword	concurrently cross freeze ilike intersect isnull lateral leading localtime
-syn keyword pgsqlReservedword	localtimestamp natural notnull offset only over overlaps placing returning
-syn keyword pgsqlReservedword	right session user similar some symmetric trailing union user variadic window
-syn match pgsqlReservedword		"current catalog" "current date" "current role" "current schema" "current time" 
-syn match pgsqlReservedword		"current timestamp" "current user"
-" }}}
-
-" Special values {{{1
-syn keyword pgsqlSpecial	 false null true
+" Unreserved (cannot be function or type name)
+syn keyword pgsqlReservedwordC	between bigint bit boolean char character coalesce dec decimal exists extract
+syn keyword pgsqlReservedwordC	float greatest inout int integer interval least national nchar none nullif
+syn keyword pgsqlReservedwordC	numeric out overlay position precision real row setof smallint substring time
+syn keyword pgsqlReservedwordC	timestamp treat trim values varchar xmlattributes xmlconcat xmlelement
+syn keyword pgsqlReservedwordC	xmlexists xmlforest xmlparse xmlpi xmlroot xmlserialize
+" Reserved (can be function or type name)
+syn keyword pgsqlReservedwordT	authorization binary collation concurrently cross current_schema freeze full
+syn keyword pgsqlReservedwordT	ilike inner is isnull join left like natural notnull outer over overlaps right
+syn keyword pgsqlReservedwordT	similar verbose
+" Reserved
+syn keyword pgsqlReservedwordR	all analyse analyze and any array as asc asymmetric both case cast check
+syn keyword pgsqlReservedwordR	collate column constraint create current_catalog current_date current_role
+syn keyword pgsqlReservedwordR	current_time current_timestamp current_user default deferrable desc distinct do
+syn keyword pgsqlReservedwordR	else end except false fetch for foreign from grant group having in initially
+syn keyword pgsqlReservedwordR	intersect into lateral leading limit localtime localtimestamp not null
+syn keyword pgsqlReservedwordR	offset on only or order placing primary references returning select
+syn keyword pgsqlReservedwordR	session_user some symmetric table then to trailing true union unique user using
+syn keyword pgsqlReservedwordR	variadic when where window with
 " }}}
 
 " Strings (single- and double-quote) {{{1
@@ -2102,7 +2108,9 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   endif
 
   HiLink pgsqlKeyword		 Statement
-  HiLink pgsqlReservedword	 Statement
+  HiLink pgsqlReservedwordR	 Special
+  HiLink pgsqlReservedwordC	 Statement
+  HiLink pgsqlReservedwordT	 Statement
   HiLink pgsqlSpecial		 Special
   HiLink pgsqlString		 String
   HiLink pgsqlNumber		 Number
