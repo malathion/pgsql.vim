@@ -22,33 +22,32 @@ syn case ignore
 
 
 " General keywords which don't fall into other categories {{{1
-syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
+syn keyword pgsqlKeyword	 abort alter after aggregate analyze as alias add
 syn keyword pgsqlKeyword	 begin by before
-syn keyword pgsqlKeyword	 conversion cascade current_date current_time current_timestamp class close
-syn keyword pgsqlKeyword	 cluster checkpoint check comment
-syn keyword pgsqlKeyword	 cast character check commit column columns constraint create copy
-syn keyword pgsqlKeyword	 database domain databases default delete distinct drop declare deallocate desc
-syn keyword pgsqlKeyword	 deferrable deferred defaults do diagnostics
+syn keyword pgsqlKeyword	 conversion cascade class close
+syn keyword pgsqlKeyword	 cluster checkpoint comment
+syn keyword pgsqlKeyword	 character commit columns copy
+syn keyword pgsqlKeyword	 database domain databases delete drop declare deallocate desc
+syn keyword pgsqlKeyword	 deferred defaults diagnostics
 syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit
-syn keyword pgsqlKeyword	 function foreign from full fetch force for
-syn keyword pgsqlKeyword	 group grant global get
-syn keyword pgsqlKeyword	 having
-syn keyword pgsqlKeyword	 index into immutable inner initially immediate inherits instead insert in if
+syn keyword pgsqlKeyword	 function full force
+syn keyword pgsqlKeyword	 global get
+syn keyword pgsqlKeyword	 index immutable inner immediate inherits instead insert if
 syn keyword pgsqlKeyword	 join
 syn keyword pgsqlKeyword	 key
-syn keyword pgsqlKeyword	 language lock local limit left load loop
+syn keyword pgsqlKeyword	 language lock local left load loop
 syn keyword pgsqlKeyword	 max min move match
-syn keyword pgsqlKeyword	 notify no new null next
-syn keyword pgsqlKeyword	 or operator outer order old on out open
-syn keyword pgsqlKeyword	 prepare plpgsql primary password primary privilege procedure partial prepared
+syn keyword pgsqlKeyword	 notify no new next
+syn keyword pgsqlKeyword	 operator outer old out open
+syn keyword pgsqlKeyword	 prepare plpgsql password privilege procedure partial prepared
 syn keyword pgsqlKeyword	 partition preserve perform
-syn keyword pgsqlKeyword	 role replace reindex release reset revoke rollback references row rows rowtype rule restrict
+syn keyword pgsqlKeyword	 role replace reindex release reset revoke rollback row rows rowtype rule restrict
 syn keyword pgsqlKeyword	 returns return
-syn keyword pgsqlKeyword	 select set strict schema sequence savepoint simple system stable setof
-syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp temporary tablespace type
-syn keyword pgsqlKeyword	 update unique unlisten using
+syn keyword pgsqlKeyword	 set strict schema sequence savepoint simple system stable setof
+syn keyword pgsqlKeyword	 truncate tranaction trigger tables temp temporary tablespace type
+syn keyword pgsqlKeyword	 update unlisten
 syn keyword pgsqlKeyword	 verbose view values varying vacuum
-syn keyword pgsqlKeyword	 where with
+syn keyword pgsqlKeyword	 with
 " }}}
 
 " Reserved words {{{1
@@ -186,7 +185,7 @@ syn keyword pgsqlType        xml
 
 " Logical, string and  numeric operators {{{1
 " TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
-" syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
+syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
 " syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
 " syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
 " syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
@@ -2091,8 +2090,8 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlVariable		 Identifier
   HiLink pgsqlComment		 Comment
   HiLink pgsqlType		 	 Type
-  HiLink pgsqlOperator		 Statement
-  HiLink pgsqlFlow		 	 Statement
+  HiLink pgsqlOperator		 Operator
+  HiLink pgsqlFlow		 	 Macro
   HiLink pgsqlFunction		 Function
   HiLink pgsqlCreate		 CREATE
   delcommand HiLink
